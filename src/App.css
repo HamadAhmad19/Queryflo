@@ -3,7 +3,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   max-width: 100%;
 }
@@ -140,12 +141,12 @@ body {
 /* Design Images positioned in corners */
 .design-image-top-right {
   position: absolute;
-  top: 1px;
-  right: 1px;
-  width: 250px;
-  height: 270px;
+  top: 10px;
+  right: 10px;
+  width: 180px;
+  height: 200px;
   z-index: 1;
-  opacity: 1;
+  opacity: 0.3;
 }
 
 .design-image-bottom-left {
@@ -157,6 +158,8 @@ body {
   z-index: 1;
   opacity: 0.3;
 }
+
+
 
 .benefits-content {
   display: flex;
@@ -243,6 +246,68 @@ body {
   line-height: 1.5;
   color: #ccc;
   margin: 0;
+}
+
+/* Responsive Design for Benefits Section */
+@media (max-width: 1024px) {
+  .benefits-section .design-image-top-right {
+    width: 140px;
+    height: 160px;
+    opacity: 0.2;
+  }
+
+  .benefits-section .design-image-center img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-section {
+    padding: 60px 20px;
+  }
+
+  .benefits-header h2 {
+    font-size: 2rem;
+  }
+
+  .benefits-cards {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .benefit-card {
+    text-align: center;
+    align-items: center;
+    max-width: 400px;
+  }
+
+  .benefits-section .design-image-top-right {
+    width: 100px;
+    height: 110px;
+    opacity: 0.15;
+  }
+
+  .benefits-section .design-image-center img {
+    width: 80px;
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .benefits-section .design-image-top-right,
+  .benefits-section .design-image-center {
+    display: none;
+  }
+
+  .benefits-header {
+    margin-top: 0;
+  }
+
+  .benefits-header p {
+    margin-bottom: 30px;
+  }
 }
 
 /* Footer Section - Horizontal Layout */
@@ -456,6 +521,12 @@ body {
   .help-divider {
     display: none;
   }
+
+  .help-left-design,
+  .help-right-design {
+    opacity: 0.7;
+    max-width: 150px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -537,10 +608,6 @@ body {
   position: relative;
 }
 
-.feature-image:first-child {
-  /* Box shadow removed */
-}
-
 .feature-button-container {
   margin-top: 20px;
 }
@@ -561,6 +628,16 @@ body {
 }
 
 /* Responsive Design for Feature Section */
+@media (max-width: 1024px) {
+  .feature-left-image {
+    max-width: 150px;
+  }
+
+  .feature-right-image {
+    max-width: 150px;
+  }
+}
+
 @media (max-width: 768px) {
   .feature-section {
     padding: 60px 20px;
@@ -576,6 +653,24 @@ body {
 
   .get-started-button {
     max-width: 150px;
+  }
+
+  .feature-left-image {
+    max-width: 100px;
+    opacity: 0.5;
+  }
+
+  .feature-right-image {
+    max-width: 100px;
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .feature-left-image,
+  .feature-right-image {
+    display: none;
   }
 }
 
@@ -647,6 +742,12 @@ body {
 }
 
 /* Responsive Design for Practice SQL Section */
+@media (max-width: 1024px) {
+  .practice-sql-image {
+    max-width: 120px;
+  }
+}
+
 @media (max-width: 768px) {
   .practice-sql-section {
     padding: 60px 20px;
@@ -658,12 +759,18 @@ body {
   }
 
   .practice-sql-image {
-    max-width: 250px;
-    opacity: 0.7;
+    max-width: 80px;
+    opacity: 0.5;
   }
 
   .practice-sql-get-started-button {
     max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .practice-sql-image {
+    display: none;
   }
 }
 
@@ -1543,6 +1650,18 @@ Our Story Section Styles */
 }
 
 /* Responsive Design for Our Story Section */
+@media (max-width: 1024px) {
+  .story-design-top-right {
+    width: 160px;
+    height: 160px;
+  }
+
+  .story-design-bottom-left {
+    width: 140px;
+    height: 140px;
+  }
+}
+
 @media (max-width: 768px) {
   .our-story-section {
     padding: 60px 20px;
@@ -1566,6 +1685,26 @@ Our Story Section Styles */
 
   .story-lights-image {
     max-height: 300px;
+  }
+
+  .story-design-top-right {
+    width: 100px;
+    height: 100px;
+    opacity: 0.4;
+  }
+
+  .story-design-bottom-left {
+    width: 80px;
+    height: 80px;
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .story-design-top-right,
+  .story-design-bottom-left {
+    display: none;
   }
 }
 
@@ -1626,6 +1765,15 @@ Our Story Section Styles */
 }
 
 /* Responsive Design for Our Mission Section */
+@media (max-width: 1024px) {
+
+  .mission-left-design,
+  .mission-right-design {
+    width: 150px;
+    opacity: 0.8;
+  }
+}
+
 @media (max-width: 768px) {
   .our-mission-section {
     padding: 60px 20px;
@@ -1639,6 +1787,20 @@ Our Story Section Styles */
   .our-mission-sub-div-2 {
     padding: 30px;
     min-height: 150px;
+  }
+
+  .mission-left-design,
+  .mission-right-design {
+    width: 100px;
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .mission-left-design,
+  .mission-right-design {
+    display: none;
   }
 }
 
@@ -1821,6 +1983,114 @@ ifferent Content Styles */
 
   .feature-description {
     font-size: 13px;
+  }
+}
+
+/* Serve Section Styles */
+.serve-section {
+  background-color: #ffffff;
+  padding: 80px 50px;
+  color: #333;
+  text-align: center;
+}
+
+.serve-header-container {
+  margin: 40px 0 60px 0;
+}
+
+.serve-main-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 20px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.serve-highlight {
+  color: #40E0D0;
+}
+
+.serve-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.serve-main-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.serve-sub-div {
+  flex: 1;
+  min-width: 250px;
+  max-width: 280px;
+  padding: 30px 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.serve-sub-div:hover {
+  transform: translateY(-5px);
+}
+
+.serve-div-image {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+.serve-sub-div p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Responsive Design for Serve Section */
+@media (max-width: 768px) {
+  .serve-section {
+    padding: 60px 20px;
+  }
+
+  .serve-main-title {
+    font-size: 36px;
+  }
+
+  .serve-subtitle {
+    font-size: 16px;
+  }
+
+  .serve-main-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .serve-sub-div {
+    min-width: auto;
+    max-width: 100%;
+    padding: 25px 15px;
+  }
+
+  .serve-div-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .serve-sub-div p {
+    font-size: 14px;
   }
 }
 
@@ -3145,6 +3415,7 @@ Div Images */
 
 /* Tablet Styles */
 @media screen and (max-width: 768px) {
+
   /* Layout Adjustments */
   .flex-container {
     flex-direction: column;
@@ -3171,6 +3442,7 @@ Div Images */
 
 /* Mobile Styles */
 @media screen and (max-width: 480px) {
+
   /* Header Adjustments */
   .header {
     padding: 10px;
@@ -3232,7 +3504,8 @@ picture img {
 /* Flexible Video Embeds */
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%;
+  /* 16:9 Aspect Ratio */
   height: 0;
   overflow: hidden;
 }
@@ -3246,7 +3519,8 @@ picture img {
 }
 
 /* High-DPI Screen Support */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
   .high-res-img {
     display: block;
   }
@@ -3263,6 +3537,7 @@ picture img {
     page-break-inside: avoid;
   }
 }
+
 /* ========================================
    COMPREHENSIVE RESPONSIVE DESIGN
 ======================================== */
@@ -3288,79 +3563,80 @@ img {
 
 /* Extra Small Devices (phones, 480px and down) */
 @media (max-width: 480px) {
+
   /* Global adjustments */
   body {
     font-size: 14px;
   }
-  
+
   /* Header responsive */
   .header {
     padding: 15px 10px;
     flex-direction: column;
     gap: 15px;
   }
-  
+
   .navbar ul {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .navbar ul li {
     margin-left: 0;
   }
-  
+
   /* Main content responsive */
   .content-container {
     padding: 20px 10px;
   }
-  
+
   .intro-section {
     flex-direction: column;
     margin-left: 0;
     text-align: center;
     gap: 20px;
   }
-  
+
   .text-content {
     max-width: 100%;
   }
-  
+
   .text-content h1 {
     font-size: 2rem;
   }
-  
+
   .image-content img {
     max-width: 80%;
   }
-  
+
   /* Benefits section responsive */
   .benefits-section {
     padding: 40px 15px;
   }
-  
+
   .design-image-top-right {
     width: 150px;
     height: 150px;
   }
-  
+
   .design-image-bottom-left {
     width: 80px;
   }
-  
+
   .benefits-header h2 {
     font-size: 1.8rem;
   }
-  
+
   .benefits-cards {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .benefit-card img {
     width: 40px;
     height: 40px;
   }
-  
+
   /* Footer responsive */
   .footer-horizontal {
     flex-direction: column;
@@ -3368,17 +3644,17 @@ img {
     padding: 20px 15px;
     text-align: center;
   }
-  
+
   .footer-links {
     flex-direction: column;
     gap: 15px;
   }
-  
+
   /* Logos section responsive */
   .logos {
     gap: 20px;
   }
-  
+
   .logos img {
     height: 30px;
   }
@@ -3386,109 +3662,110 @@ img {
 
 /* Small Devices (tablets, 768px and down) */
 @media (max-width: 768px) {
+
   /* Header adjustments */
   .header {
     padding: 15px;
   }
-  
+
   .navbar ul li {
     margin-left: 15px;
   }
-  
+
   .navbar ul li a {
     font-size: 14px;
   }
-  
+
   /* Main content adjustments */
   .intro-section {
     flex-direction: column;
     margin-left: 0;
     text-align: center;
   }
-  
+
   .text-content h1 {
     font-size: 2.5rem;
   }
-  
+
   /* Benefits section adjustments */
   .benefits-section {
     padding: 60px 20px;
   }
-  
+
   .design-image-top-right {
     width: 180px;
     height: 180px;
   }
-  
+
   .benefits-header h2 {
     font-size: 2rem;
   }
-  
+
   .benefits-cards {
     flex-direction: column;
     align-items: center;
   }
-  
+
   /* Practice SQL section adjustments */
   .practice-sql-header h2 {
     white-space: normal;
   }
-  
+
   .practice-sql-button-container {
     margin-top: 100px;
   }
-  
+
   /* About section responsive */
   .about-main-title {
     font-size: 40px;
   }
-  
+
   .about-welcome-title {
     font-size: 24px;
   }
-  
+
   /* Story section responsive */
   .our-story-content {
     padding-left: 0;
     flex-direction: column;
     text-align: center;
   }
-  
+
   .story-design-top-right,
   .story-design-bottom-left {
     width: 150px;
     height: 150px;
   }
-  
+
   /* Mission section responsive */
   .mission-left-design,
   .mission-right-design {
     width: 100px;
   }
-  
+
   /* Vision section responsive */
   .vision-title {
     font-size: 36px;
   }
-  
+
   /* Pricing responsive */
   .pricing-wrapper {
     padding: 0 20px;
   }
-  
+
   .pricing-main {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .pricing-card {
     max-width: 100%;
   }
-  
+
   .plan-title {
     font-size: 1.5rem;
   }
-  
+
   .price {
     font-size: 3rem;
   }
@@ -3496,47 +3773,48 @@ img {
 
 /* Medium Devices (small laptops, 1024px and down) */
 @media (max-width: 1024px) {
+
   /* Header adjustments */
   .navbar ul li {
     margin-left: 20px;
   }
-  
+
   /* Main content adjustments */
   .intro-section {
     margin-left: 100px;
   }
-  
+
   .text-content h1 {
     font-size: 2.8rem;
   }
-  
+
   /* Benefits section adjustments */
   .benefits-section {
     padding: 70px 30px;
   }
-  
+
   .design-image-top-right {
     width: 200px;
     height: 200px;
   }
-  
+
   /* Community section adjustments */
   .community-arrow img,
   .partnership-handshake img {
     max-width: 350px;
   }
-  
+
   /* Story section adjustments */
   .our-story-content {
     padding-left: 50px;
   }
-  
+
   /* Mission section adjustments */
   .mission-left-design,
   .mission-right-design {
     width: 150px;
   }
-  
+
   /* Pricing adjustments */
   .pricing-wrapper {
     padding: 0 30px;
@@ -3548,19 +3826,19 @@ img {
   .container {
     max-width: 1400px;
   }
-  
+
   .intro-section {
     margin-left: 200px;
   }
-  
+
   .text-content h1 {
     font-size: 3.5rem;
   }
-  
+
   .benefits-header h2 {
     font-size: 3rem;
   }
-  
+
   .community-arrow img,
   .partnership-handshake img {
     max-width: 450px;
@@ -3648,23 +3926,23 @@ img {
   .serve-main-title {
     font-size: 1.8rem;
   }
-  
+
   .serve-main-container {
     flex-direction: column;
     bottom: 10%;
     gap: 15px;
     width: 95%;
   }
-  
+
   .serve-sub-div {
     padding: 15px;
   }
-  
+
   .serve-div-image {
     width: 40px;
     height: 40px;
   }
-  
+
   .serve-sub-div p {
     font-size: 0.8rem;
   }
@@ -3674,22 +3952,22 @@ img {
   .serve-main-title {
     font-size: 2.2rem;
   }
-  
+
   .serve-main-container {
     flex-direction: column;
     bottom: 12%;
     gap: 15px;
   }
-  
+
   .serve-sub-div {
     padding: 18px;
   }
-  
+
   .serve-div-image {
     width: 50px;
     height: 50px;
   }
-  
+
   .serve-sub-div p {
     font-size: 0.85rem;
   }
@@ -3699,12 +3977,12 @@ img {
   .serve-main-title {
     font-size: 2.5rem;
   }
-  
+
   .serve-main-container {
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
   .serve-sub-div {
     flex: 0 1 45%;
     margin-bottom: 15px;
@@ -3778,7 +4056,8 @@ img {
 }
 
 /* Responsive button adjustments */
-button, .button {
+button,
+.button {
   padding: 12px 24px;
   font-size: 1rem;
   border-radius: 5px;
@@ -3787,14 +4066,18 @@ button, .button {
 }
 
 @media (max-width: 480px) {
-  button, .button {
+
+  button,
+  .button {
     padding: 10px 20px;
     font-size: 0.9rem;
   }
 }
 
 /* Responsive form elements */
-input, textarea, select {
+input,
+textarea,
+select {
   width: 100%;
   padding: 12px;
   font-size: 1rem;
@@ -3804,7 +4087,10 @@ input, textarea, select {
 }
 
 @media (max-width: 480px) {
-  input, textarea, select {
+
+  input,
+  textarea,
+  select {
     padding: 10px;
     font-size: 0.9rem;
   }
