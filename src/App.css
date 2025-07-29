@@ -1,38 +1,3811 @@
-.App {
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  color: white;
+}
+
+/* Header Section */
+.header {
+  background-color: #111;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo img {
+  height: 40px;
+  filter: brightness(0) invert(1);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar ul li {
+  margin-left: 30px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Main Content Section */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+/* First Section with Text and Image */
+.intro-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: 370px;
+}
+
+.text-content {
+  max-width: 50%;
+}
+
+.text-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.query-flo-text {
+  color: #00bcd4;
+}
+
+.text-content p {
+  font-size: 1rem;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.image-content img {
+  max-width: 40%;
+  height: auto;
+}
+
+/* Company Logos Section */
+.footer-section {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.footer-section p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.logos img {
+  height: 40px;
+  width: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.logos img:hover {
+  opacity: 1;
+}
+
+/* Benefits Section */
+.benefits-section {
+  background-color: #111;
+  padding: 80px 50px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Design Images positioned in corners */
+.design-image-top-right {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 250px;
+  height: 270px;
+  z-index: 1;
+  opacity: 1;
+}
+
+.design-image-bottom-left {
+  position: absolute;
+  bottom: 1px;
+  left: 1px;
+  width: 120px;
+  height: auto;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.benefits-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.benefits-header {
+  text-align: center;
+  margin-top: -40px;
+}
+
+.benefits-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: white;
+  font-weight: 600;
+}
+
+.benefits-header p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 50px;
+  color: #00bcd4;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.design-images {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.design-images img {
+  width: 120px;
+  height: auto;
+}
+
+.design-image-center {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.design-image-center img {
+  width: 120px;
+  height: auto;
+}
+
+.benefits-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+}
+
+.benefit-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.benefit-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.benefit-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.benefit-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ccc;
+  margin: 0;
+}
+
+/* Footer Section - Horizontal Layout */
+.footer-horizontal {
+  background-color: white;
+  color: #333;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #00bcd4;
+}
+
+.footer-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.footer-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00bcd4;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  transition: background-color 0.3s ease;
+}
+
+.footer-social a:hover {
+  background-color: #00bcd4;
+}
+
+.footer-social img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Help Section */
+.help-section {
+  background-color: #f8f9fa;
+  padding: 0;
+  position: relative;
+  min-height: 600px;
+}
+
+/* Background decorative images - clearly visible */
+.help-left-design {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  opacity: 1;
+  z-index: 1;
+}
+
+.help-right-design {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  opacity: 1;
+  z-index: 1;
+}
+
+.help-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 0;
+}
+
+.help-header {
+  text-align: center;
+  margin-bottom: 80px;
+  padding: 0 50px;
+  position: relative;
+  z-index: 3;
+}
+
+.help-header h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.help-highlight {
+  color: #333;
+  font-weight: bold;
+}
+
+.help-header p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.help-main-content {
+  background-color: transparent;
+  margin: 0 250px;
+  padding: 30px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.help-section-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.help-section-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.help-text-content {
+  margin-bottom: 30px;
+}
+
+.help-text-content h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.help-text-content p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.help-image-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.help-image-content img {
+  max-width: 280px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.help-divider {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent 10%, #00bcd4 50%, transparent 90%);
+  transform: translateX(-50%);
+}
+
+.help-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background-color: #00bcd4;
+  border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .help-main-content {
+    margin: 0 50px;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .help-divider {
+    display: none;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (max-width: 768px) {
+  .help-main-content {
+    margin: 0 20px;
+    padding: 40px 20px;
+  }
+
+  .help-header {
+    padding: 0 20px;
+  }
+}
+
+/* Feature Section */
+.feature-section {
+  background-color: #1a1a1a;
+  padding: 80px 50px;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.feature-left-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 200px;
+  height: auto;
+  z-index: 1;
+}
+
+.feature-right-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 200px;
+  height: auto;
+  z-index: 1;
+}
+
+.feature-header {
+  margin-bottom: 60px;
+}
+
+.feature-header h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.feature-header p {
+  font-size: 1.1rem;
+  color: #00bcd4;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.feature-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.feature-image {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.7;
+  mix-blend-mode: screen;
+  filter: brightness(2.2) contrast(1.2);
+  position: relative;
+}
+
+.feature-image:first-child {
+  /* Box shadow removed */
+}
+
+.feature-button-container {
+  margin-top: 20px;
+}
+
+.get-started-button {
+  max-width: 200px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: none;
+  background-color: #1a1a1a;
+  background-color: #3f3d3da4;
+  ;
+}
+
+.get-started-button:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design for Feature Section */
+@media (max-width: 768px) {
+  .feature-section {
+    padding: 60px 20px;
+  }
+
+  .feature-header h2 {
+    font-size: 2rem;
+  }
+
+  .feature-content {
+    gap: 30px;
+  }
+
+  .get-started-button {
+    max-width: 150px;
+  }
+}
+
+/* Practice SQL Section */
+.practice-sql-section {
+  background-color: #111;
+  padding: 80px 50px;
+  color: white;
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.practice-sql-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 150px;
+  height: auto;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.practice-sql-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.practice-sql-header {
+  margin-bottom: 40px;
+  margin-top: -20px;
+}
+
+.practice-sql-header h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 30px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.practice-sql-header p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.practice-sql-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 220px;
+}
+
+.practice-sql-get-started-button {
+  max-width: 200px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.practice-sql-get-started-button:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design for Practice SQL Section */
+@media (max-width: 768px) {
+  .practice-sql-section {
+    padding: 60px 20px;
+    min-height: 400px;
+  }
+
+  .practice-sql-header h2 {
+    font-size: 2rem;
+  }
+
+  .practice-sql-image {
+    max-width: 250px;
+    opacity: 0.7;
+  }
+
+  .practice-sql-get-started-button {
+    max-width: 150px;
+  }
+}
+
+/* Community Section */
+.community-section {
+  background-color: #f8f9fa;
+  padding: 80px 50px;
+  color: #333;
+}
+
+/* First Section - Join Community */
+.community-join-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto 80px auto;
+  gap: 60px;
+}
+
+.community-arrow {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.community-arrow img {
+  max-width: 400px;
+  height: auto;
+}
+
+.community-join-content {
+  flex: 1;
+  text-align: left;
+}
+
+.community-join-content h2 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.community-join-content p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.join-us-button {
+  max-width: 150px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.join-us-button:hover {
+  transform: scale(1.05);
+}
+
+/* Second Section - Testimonials */
+.community-testimonials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto 80px auto;
+}
+
+.testimonial-card {
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Third Section - Partnership */
+.community-partnership-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 60px;
+}
+
+.partnership-content {
+  flex: 1;
+  text-align: left;
+}
+
+.partnership-content h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.partnership-content p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.start-partnership-button {
+  max-width: 200px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.start-partnership-button:hover {
+  transform: scale(1.05);
+}
+
+.partnership-handshake {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.partnership-handshake img {
+  max-width: 400px;
+  height: auto;
+}
+
+/* Responsive Design for Community Section */
+@media (max-width: 768px) {
+
+  .community-join-section,
+  .community-partnership-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .community-testimonials {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .community-join-content h2,
+  .partnership-content h2 {
+    font-size: 2rem;
+  }
+
+  .community-arrow img,
+  .partnership-handshake img {
+    max-width: 300px;
+  }
+}
+
+/* Get Started Section */
+.get-started-section {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  position: relative;
+}
+
+.get-started-background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.get-started-button-overlay {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  max-width: 150px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.get-started-button-overlay:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+/* Responsive Design for Get Started Section */
+@media (max-width: 768px) {
+  .get-started-section {
+    height: 40vh;
+  }
+
+  .get-started-button-overlay {
+    max-width: 120px;
+    bottom: 15%;
+  }
+}
+
+/* Request Info Section */
+.req-info-section {
+  background-color: #f8f9fa;
+  padding: 80px 50px;
+  color: #333;
+  text-align: center;
+}
+
+.req-info-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.req-info-header {
+  margin-bottom: 10px;
+}
+
+.req-info-subtitle {
+  font-size: 0.9rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.req-info-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.req-info-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.req-info-description {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.req-info-button-container {
+  margin: 10px 0;
+}
+
+.req-info-contact-btn {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.req-info-contact-btn:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+.req-info-footer {
+  margin-top: 20px;
+}
+
+.req-info-copyright {
+  font-size: 0.9rem;
+  color: #999;
+  margin: 0;
+}
+
+/* Responsive Design for Request Info Section */
+@media (max-width: 768px) {
+  .req-info-section {
+    padding: 60px 20px;
+  }
+
+  .req-info-title {
+    font-size: 2rem;
+  }
+
+  .req-info-description {
+    font-size: 1rem;
+  }
+
+  .req-info-contact-btn {
+    padding: 12px 30px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Pricing Section */
+.pricing-main {
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  flex: 1;
+  background-color: #333;
+  padding: 15px;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  max-width: 250px;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+}
+
+.pricing-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Responsive Design for Pricing */
+@media (max-width: 768px) {
+  .pricing-main {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .pricing-card {
+    margin-bottom: 20px;
+  }
+}
+
+/* Free Plan Specific Styles */
+.free-plan {
+  background-color: white !important;
+  color: #333 !important;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 500px;
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.plan-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.plan-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+.plan-price {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.currency {
+  font-size: 1.5rem;
+  color: #00bcd4;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 4rem;
+  color: #00bcd4;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+.plan-access {
+  text-align: center;
+  margin: 20px 0 2px 0;
+}
+
+.access-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 10px 0;
+}
+
+.access-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.plan-divider {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 5px 0 45px 0;
+}
+
+.plan-features {
+  flex-grow: 1;
+  padding: 10px 0;
+}
+
+.feature-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.feature-item:last-child {
+  border-bottom: none;
+}
+
+.feature-text {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.feature-check {
+  color: #00bcd4;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.plan-footer {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.plan-button {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.free-button {
+  background-color: #00bcd4;
+  color: white;
+}
+
+.free-button:hover {
+  background-color: #00acc1;
+  transform: translateY(-2px);
+}
+
+/*Pro Plan Specific Styles */
+.pro-plan {
+  background-color: white !important;
+  color: #333 !important;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 500px;
+}
+
+.pro-plan .plan-title {
+  color: #333;
+}
+
+.pro-plan .plan-subtitle {
+  color: #666;
+}
+
+.pro-plan .access-title {
+  color: #333;
+}
+
+.pro-plan .access-subtitle {
+  color: #666;
+}
+
+.pro-plan .feature-text {
+  color: #666;
+}
+
+.pro-plan .plan-divider {
+  border-top: 1px solid #e0e0e0;
+}
+
+.plan-period {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
+}
+
+.price-period {
+  font-size: 1.2rem;
+  color: #00bcd4;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.plan-extra {
+  margin: 20px 0;
+  padding: 15px;
+  border: 2px solid #00bcd4;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.extra-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 5px 0;
+}
+
+.extra-subtitle {
+  font-size: 0.9rem;
+  color: #000;
+  margin: 0;
+  font-style: italic;
+}
+
+.upgrade-button {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 25px;
+}
+
+.upgrade-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Starting From Text for Institutional Plan */
+.starting-from {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 5px 0;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Prici
+ng Header Section */
+.pricing-header-section {
+  background-color: #ffffff;
+  padding: 60px 50px 40px 50px;
+  text-align: center;
+  color: #333;
+}
+
+.pricing-main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.pricing-highlight {
+  color: #00bcd4;
+}
+
+.pricing-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Responsive Design for Pricing Header */
+@media (max-width: 768px) {
+  .pricing-header-section {
+    padding: 40px 20px 30px 20px;
+  }
+
+  .pricing-main-title {
+    font-size: 2.2rem;
+  }
+
+  .pricing-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* New Pricing Wrapper Structure */
+.pricing-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.pricing-content {
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pricing-left-image {
+  max-width: 10%;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.pricing-right-image {
+  max-width: 100px;
+  height: auto;
+  opacity: 0.8;
+  flex-shrink: 0;
+  position: right;
+
+}
+
+.pricing-main {
+  position: relative;
+}
+
+/* Ensure pricing cards are above the decorative images */
+.pricing-card {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Design for Pricing Images */
+@media (max-width: 1200px) {
+
+  .pricing-left-image,
+  .pricing-right-image {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .pricing-left-image,
+  .pricing-right-image {
+    display: none;
+  }
+}
+
+/* About Section Styles */
+.about-section {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 0;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.about-background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.about-background-image {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.about-main-title {
+  font-size: 64px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 10px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  letter-spacing: -1px;
+}
+
+.about-welcome-title {
+  font-size: 36px;
+  font-weight: 400;
+  color: #40E0D0;
+  margin: 0 0 30px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.about-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333333;
+  margin: 0 0 40px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+.about-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.start-learning-button {
+  cursor: pointer;
+  max-width: 160px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.start-learning-button:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Design for About Section */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 20px;
+    min-height: 70vh;
+  }
+
+  .about-main-title {
+    font-size: 48px;
+  }
+
+  .about-welcome-title {
+    font-size: 28px;
+  }
+
+  .about-description {
+    font-size: 13px;
+  }
+
+  .start-learning-button {
+    max-width: 140px;
+  }
+}
+
+/* 
+Our Story Section Styles */
+.our-story-section {
+  background-color: #1a1a1a;
+  padding: 80px 50px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative corner images */
+.story-design-top-right {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 220px;
+  height: 220px;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.story-design-bottom-left {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  width: 200px;
+  height: 200px;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.our-story-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 130px;
+  gap: 60px;
+}
+
+.our-story-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.our-story-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 30px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.2;
+}
+
+.our-story-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #00bcd4;
+  margin: 0 0 25px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.our-story-quote {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0 0 25px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-style: italic;
+  padding-left: 20px;
+  border-left: 3px solid #00bcd4;
+}
+
+.our-story-solution {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #00bcd4;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.our-story-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.story-lights-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+}
+
+/* Responsive Design for Our Story Section */
+@media (max-width: 768px) {
+  .our-story-section {
+    padding: 60px 20px;
+  }
+
+  .our-story-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .our-story-title {
+    font-size: 36px;
+  }
+
+  .our-story-description,
+  .our-story-quote,
+  .our-story-solution {
+    font-size: 14px;
+  }
+
+  .story-lights-image {
+    max-height: 300px;
+  }
+}
+
+/* Our Mission Section Styles */
+.our-mission-section {
+  background-color: #ffffff;
+  padding: 80px 50px;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative side images - Full Page Coverage */
+.mission-left-design {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  opacity: 1;
+}
+
+.mission-right-design {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  opacity: 1;
+}
+
+.our-mission-main {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.our-mission-sub-div-1 {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  min-height: 400px;
+}
+
+.our-mission-sub-div-2 {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  min-height: 200px;
+}
+
+/* Responsive Design for Our Mission Section */
+@media (max-width: 768px) {
+  .our-mission-section {
+    padding: 60px 20px;
+  }
+
+  .our-mission-main {
+    gap: 30px;
+  }
+
+  .our-mission-sub-div-1,
+  .our-mission-sub-div-2 {
+    padding: 30px;
+    min-height: 150px;
+  }
+}
+
+/* Mission Content Layout Styles */
+.mission-content-layout {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.mission-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.mission-people-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.mission-text-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mission-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 20px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.mission-highlight {
+  color: #40E0D0;
+}
+
+.mission-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0 0 30px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.mission-button-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.get-started-button {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 15px 40px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.get-started-button:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design for Mission Content */
+@media (max-width: 768px) {
+  .mission-content-layout {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .mission-text-container {
+    align-items: center;
+  }
+
+  .mission-title {
+    font-size: 28px;
+  }
+
+  .mission-description {
+    font-size: 14px;
+  }
+
+  .mission-people-image {
+    max-width: 300px;
+  }
+}
+
+/* D
+ifferent Content Styles */
+.different-content {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.different-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 40px 0;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.different-highlight {
+  color: #40E0D0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.features-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.feature-icon {
+  color: #40E0D0;
+  font-size: 20px;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.feature-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Responsive Design for Features Grid */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .different-title {
+    font-size: 28px;
+  }
+
+  .feature-title {
+    font-size: 16px;
+  }
+
+  .feature-description {
+    font-size: 13px;
+  }
+}
+
+/* 
+Vision Section Styles */
+.vision-section {
+  background-color: #ffffff;
+  padding: 80px 50px;
+  color: #333;
+}
+
+.vision-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 60px;
+}
+
+.vision-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.vision-picture-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+}
+
+.vision-text-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.vision-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 30px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.vision-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0 0 40px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  text-align: left;
+}
+
+.vision-button-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.join-us-button {
+  cursor: pointer;
+  max-width: 150px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.join-us-button:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design for Vision Section */
+@media (max-width: 768px) {
+  .vision-section {
+    padding: 60px 20px;
+  }
+
+  .vision-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .vision-text-container {
+    align-items: center;
+  }
+
+  .vision-title {
+    font-size: 36px;
+  }
+
+  .vision-description {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .vision-picture-image {
+    max-height: 300px;
+  }
+}
+
+/* Partnership Landing Section Styles */
+.partnership-landing-section {
+  background-color: #1a1a1a;
+  padding: 80px 50px;
+  color: white;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.partnership-landing-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 60px;
+}
+
+.partnership-text-container {
+  flex: 1;
+  max-width: 600px;
+}
+
+.partnership-main-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.2;
+}
+
+.partnership-subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: #00bcd4;
+  margin: 0 0 30px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.3;
+}
+
+.partnership-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #cccccc;
+  margin: 0 0 40px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.partnership-button-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.start-partnership-button {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 18px 35px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  white-space: nowrap;
+  display: inline-block;
+  min-width: fit-content;
+}
+
+.start-partnership-button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.partnership-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.partner-main-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+}
+
+/* Responsive Design for Partnership Landing Section */
+@media (max-width: 768px) {
+  .partnership-landing-section {
+    padding: 60px 20px;
+    min-height: 70vh;
+  }
+
+  .partnership-landing-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .partnership-main-title {
+    font-size: 36px;
+  }
+
+  .partnership-subtitle {
+    font-size: 20px;
+  }
+
+  .partnership-description {
+    font-size: 14px;
+  }
+
+  .partner-main-image {
+    max-height: 300px;
+  }
+}
+
+/* WhyUs Section Styles */
+.whyus-section {
+  background-color: #ffffff;
+  padding: 80px 50px;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Decorative side images - Separated from divs */
+.whyus-left-design {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 500px;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.whyus-right-design {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 500px;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+/* Center Content - Heading and Two Divs (separated from images) */
+.whyus-content-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 40px;
+}
+
+.whyus-div-1 {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-height: 200px;
+  border: 1px solid #e0e0e0;
+}
+
+.whyus-div-2 {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-height: 200px;
+  border: 1px solid #e0e0e0;
+}
+
+.whyus-div-1 h2,
+.whyus-div-2 h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 20px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.whyus-div-1 p,
+.whyus-div-2 p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Responsive Design for WhyUs Section */
+@media (max-width: 768px) {
+  .whyus-section {
+    padding: 60px 20px;
+    min-height: 70vh;
+  }
+
+  .whyus-content-container {
+    flex-direction: row;
+    gap: 20px;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .whyus-div-1,
+  .whyus-div-2 {
+    padding: 30px;
+    min-height: 200px;
+  }
+
+  .whyus-left-design,
+  .whyus-right-design {
+    width: 100px;
+  }
+}
+
+/* Pain Points Styles */
+.pain-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.pain-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.pain-point-icon {
+  color: #e74c3c;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.pain-point-item p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+
+
+/* Responsive Design for Main Heading */
+@media (max-width: 768px) {
+  .whyus-main-heading h1 {
+    font-size: 32px;
+  }
+}
+
+/* Help Points Styles */
+.help-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.help-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.help-point-icon {
+  color: #00bcd4;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.help-point-item p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* WhyUs Divs Row */
+.whyus-divs-row {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+/* Main heading styles */
+.whyus-main-heading {
+  font-size: 42px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin: 0 0 40px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+/* Responsive Design for Divs Row */
+@media (max-width: 768px) {
+  .whyus-divs-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+/*Talk Section Styles */
+.talk-section {
+  background-color: #ffffff;
+  padding: 80px 50px;
+  color: #333;
+}
+
+.talk-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 80px;
+}
+
+.talk-text-container {
+  flex: 1;
+  max-width: 600px;
+}
+
+.talk-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 30px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.2;
+}
+
+.talk-description {
+  margin-bottom: 40px;
+}
+
+.talk-description p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0 0 15px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.talk-buttons-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.schedule-demo-button {
+  background-color: transparent;
+  color: #333;
+  border: 2px solid #333;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  white-space: nowrap;
+}
+
+.schedule-demo-button:hover {
+  background-color: #333;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.contact-partnership-button {
+  background-color: #333;
+  color: white;
+  border: 2px solid #333;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  white-space: nowrap;
+}
+
+.contact-partnership-button:hover {
+  background-color: transparent;
+  color: #333;
+  transform: translateY(-2px);
+}
+
+.talk-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.handshake-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+}
+
+/* Responsive Design for Talk Section */
+@media (max-width: 768px) {
+  .talk-section {
+    padding: 60px 20px;
+  }
+
+  .talk-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .talk-title {
+    font-size: 36px;
+  }
+
+  .talk-description p {
+    font-size: 14px;
+  }
+
+  .talk-buttons-container {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .schedule-demo-button,
+  .contact-partnership-button {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+
+  .handshake-image {
+    max-height: 300px;
+  }
+}
+
+/* Comprehensive Section Styles */
+.comprehensive-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/* Sidebar Styles */
+.comprehensive-sidebar {
+  width: 280px;
+  background-color: #ffffff;
+  padding: 0;
+  border-right: 1px solid #e0e0e0;
+  min-height: 100vh;
+}
+
+.sidebar-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  padding: 20px 20px 15px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.sidebar-items {
+  padding: 10px 0;
+}
+
+.sidebar-item {
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #999;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-item:hover {
+  background-color: #f8f9fa;
+  color: #666;
+}
+
+.sidebar-item.active {
+  background-color: #b3e5fc;
+  color: #333;
+  font-weight: 500;
+  border-left: 3px solid #00bcd4;
+}
+
+/* Content Area Styles */
+.comprehensive-content {
+  flex: 1;
+  background-color: #ffffff;
+  overflow-y: auto;
+}
+
+.content-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 50px;
+}
+
+.content-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 30px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.2;
+}
+
+.content-navigation {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.prev-button {
+  background-color: #b3e5fc;
+  color: #333;
+}
+
+.prev-button:hover {
+  background-color: #81d4fa;
+  transform: translateY(-1px);
+}
+
+.next-button {
+  background-color: #00bcd4;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.next-button:hover {
+  background-color: #00acc1;
+  transform: translateY(-1px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.content-text {
+  line-height: 1.7;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.content-text p {
+  font-size: 16px;
+  margin: 0 0 20px 0;
+  text-align: justify;
+}
+
+.content-text p:last-child {
+  margin-bottom: 0;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 16px;
+  color: #666;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Responsive Design for Comprehensive Section */
+@media (max-width: 768px) {
+  .comprehensive-container {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .comprehensive-sidebar {
+    width: 100%;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .sidebar-items {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+  }
+
+  .sidebar-item {
+    white-space: nowrap;
+    min-width: fit-content;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .sidebar-item.active {
+    border-left: none;
+    border-bottom: 3px solid #00bcd4;
+  }
+
+  .content-page {
+    padding: 30px 20px;
+  }
+
+  .content-title {
+    font-size: 28px;
+  }
+
+  .content-text p {
+    font-size: 14px;
+  }
+}
+
+/* Additional styles for content sections with lists */
+.content-text h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 30px 0 15px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.content-text h3:first-child {
+  margin-top: 0;
+}
+
+.content-text ol {
+  margin: 0 0 25px 0;
+  padding-left: 20px;
+}
+
+.content-text ol li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.content-text ol li:last-child {
+  margin-bottom: 0;
+}
+
+* Disabled button styles */ .nav-button.disabled,
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.nav-button.disabled:hover,
+.nav-button:disabled:hover {
+  transform: none;
+  background-color: inherit;
+}
+
+/* Command list styling for Categories of SQL Command */
+.command-list {
+  margin: 20px 0;
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #e9ecef;
+}
+
+.command-item {
+  display: flex;
+  margin-bottom: 8px;
+  align-items: flex-start;
+}
+
+.command-name {
+  font-weight: 600;
+  color: #333;
+  min-width: 140px;
+  flex-shrink: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.command-description {
+  color: #666;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* SQL Commands Table Styling */
+.sql-commands-table {
+  width: 100%;
+  margin: 30px 0;
+  border-collapse: collapse;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 1.5fr;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  font-weight: 600;
+  color: #333;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 1.5fr;
+  border: 1px solid #dee2e6;
+  border-top: none;
+}
+
+.table-row:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.header-cell,
+.table-cell {
+  padding: 12px 45px;
+  text-align: left;
+  vertical-align: top;
+  border-right: 1px solid #dee2e6;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.header-cell:last-child,
+.table-cell:last-child {
+  border-right: none;
+}
+
+.table-cell.command-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.table-cell.code {
+  font-family: 'Courier New', monospace;
+  background-color: #f1f3f4;
+  color: #000000;
+  font-size: 13px;
+}
+
+/* Note section styling */
+.note-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-left: 4px solid #00bcd4;
+  border-radius: 4px;
+}
+
+.note-section h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 15px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.note-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0 0 15px 0;
+  text-align: justify;
+}
+
+.note-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive design for table */
+@media (max-width: 768px) {
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr;
+    display: block;
+  }
+
+  .header-cell,
+  .table-cell {
+    display: block;
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+    padding: 8px 15px;
+  }
+
+  .header-cell:before,
+  .table-cell:before {
+    content: attr(data-label) ": ";
+    font-weight: 600;
+    display: inline-block;
+    width: 120px;
+  }
+}
+
+/* ACID Properties Table - 3 column layout */
+.content-page .sql-commands-table .table-header:has(.header-cell:nth-child(3):last-child),
+.content-page .sql-commands-table .table-row:has(.table-cell:nth-child(3):last-child) {
+  grid-template-columns: 1fr 2fr 2fr;
+}
+
+/* Responsive design for 3-column ACID table */
+@media (max-width: 768px) {
+
+  .content-page .sql-commands-table .table-header:has(.header-cell:nth-child(3):last-child),
+  .content-page .sql-commands-table .table-row:has(.table-cell:nth-child(3):last-child) {
+    grid-template-columns: 1fr;
+    display: block;
+  }
+}
+
+/* Advanced SQL Command Table Styles - Works with existing HTML table structure */
+.sql-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.sql-table th {
+  padding: 15px 10px;
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+}
+
+.sql-table td {
+  padding: 15px 10px;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid #ddd;
+  line-height: 1.4;
+}
+
+.sql-table tr:nth-child(even) {
+  background-color: #f9f9f9 !important;
+}
+
+.sql-table tr:hover {
+  background-color: #f0f0f0 !important;
+}
+
+.sql-table td:first-child {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.sql-table td:last-child {
+  font-family: 'Courier New', monospace;
+  background-color: #f8f8f8;
+  color: #e74c3c;
+  font-size: 0.9em;
+}
+
+/* Ensure consistent table layout */
+.table-container {
+  overflow-x: auto;
+}
+
+.sql-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.sql-table th:nth-child(1),
+.sql-table td:nth-child(1) {
+  width: 20%;
+}
+
+.sql-table th:nth-child(2),
+.sql-table td:nth-child(2) {
+  width: 15%;
+}
+
+.sql-table th:nth-child(3),
+.sql-table td:nth-child(3) {
+  width: 35%;
+}
+
+.sql-table th:nth-child(4),
+.sql-table td:nth-child(4) {
+  width: 30%;
+}
+
+/* Responsive Design for Advanced SQL Table */
+@media (max-width: 768px) {
+  .sql-table {
+    font-size: 12px;
+  }
+
+  .sql-table th,
+  .sql-table td {
+    padding: 8px 5px;
+  }
+}
+
+/* Dyn
+amic SQL Command Table Styles */
+.sql-commands-table {
+  width: 100%;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 2fr;
+  background-color: #f5f5f5;
+  border-bottom: 2px solid #ddd;
+  font-weight: bold;
+  align-items: stretch;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 2fr;
+  border-bottom: 1px solid #ddd;
+  align-items: stretch;
+}
+
+.table-row:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table-row:hover {
+  background-color: #f0f0f0;
+}
+
+.header-cell {
+  padding: 15px 45px;
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+  border-right: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+}
+
+.header-cell:last-child {
+  border-right: none;
+}
+
+.table-cell {
+  padding: 15px 10px;
+  text-align: left;
+  border-right: 1px solid #ddd;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.table-cell:last-child {
+  border-right: none;
+}
+
+.command-name {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.code {
+  font-family: 'Courier New', monospace;
+  background-color: #f8f8f8;
+  color: #e74c3c;
+  font-size: 0.9em;
+  padding: 10px;
+  border-radius: 4px;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+/* Responsive Design for Dynamic Table */
+@media (max-width: 768px) {
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .header-cell,
+  .table-cell {
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+/* Serve Section Styles */
+.serve-section {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Responsive Design for Serve Section */
+@media (max-width: 768px) {
+  .serve-section {
+    height: 70vh;
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .serve-section {
+    height: 60vh;
+    min-height: 400px;
+  }
+}
+
+/* Serve Main Container and Sub-divs */
+.serve-main-container {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: 70%;
+  max-width: 800px;
+  z-index: 2;
+}
+
+.serve-sub-div {
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  max-width: 180px;
+}
+
+.serve-sub-div:hover {
+  transform: translateY(-5px);
+}
+
+.serve-sub-div h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.serve-sub-div p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Responsive Design for Serve Sub-divs */
+@media (max-width: 768px) {
+  .serve-main-container {
+    flex-direction: column;
+    width: 95%;
+    gap: 15px;
+  }
+
+  .serve-sub-div {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .serve-sub-div {
+    padding: 12px;
+  }
+
+  .serve-sub-div h3 {
+    font-size: 1rem;
+  }
+
+  .serve-sub-div p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Serve 
+Div Images */
+.serve-div-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+/* Responsive Design for Serve Images */
+@media (max-width: 768px) {
+  .serve-div-image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .serve-div-image {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 6px;
+  }
+}
+
+/* Serve Header Styles */
+.serve-header-container {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.serve-main-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 85px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  letter-spacing: -1px;
+}
+
+.serve-highlight {
+  color: #40E0D0;
+}
+
+.serve-subtitle {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Design for Serve Header */
+@media (max-width: 768px) {
+  .serve-header-container {
+    top: 30%;
+  }
+
+  .serve-main-title {
+    font-size: 2rem;
+  }
+
+  .serve-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .serve-main-title {
+    font-size: 1.5rem;
+  }
+
+  .serve-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* Add these responsive styles at the end of your existing CSS file */
+
+/* General Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 768px) {
+  /* Layout Adjustments */
+  .flex-container {
+    flex-direction: column;
+  }
+
+  /* Image Responsiveness */
+  .image-content img {
+    max-width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Text Content */
+  .text-content {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  /* Section Spacing */
+  section {
+    padding: 40px 20px;
+  }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 480px) {
+  /* Header Adjustments */
+  .header {
+    padding: 10px;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  /* Image Containers */
+  .image-container {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* Button Adjustments */
+  .button {
+    width: 100%;
+    max-width: none;
+    margin: 10px 0;
+  }
+}
+
+/* Picture Element Responsive Support */
+picture {
+  display: block;
+  width: 100%;
+}
+
+picture img {
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive Grid Systems */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Responsive Background Images */
+.bg-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Flexible Video Embeds */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* High-DPI Screen Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .high-res-img {
+    display: block;
+  }
+
+  .low-res-img {
+    display: none;
+  }
+}
+
+/* Print Media Query */
+@media print {
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+}
+/* ========================================
+   COMPREHENSIVE RESPONSIVE DESIGN
+======================================== */
+
+/* Global Image Responsiveness */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Container Responsiveness */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========================================
+   MOBILE FIRST RESPONSIVE BREAKPOINTS
+======================================== */
+
+/* Extra Small Devices (phones, 480px and down) */
+@media (max-width: 480px) {
+  /* Global adjustments */
+  body {
+    font-size: 14px;
+  }
+  
+  /* Header responsive */
+  .header {
+    padding: 15px 10px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .navbar ul li {
+    margin-left: 0;
+  }
+  
+  /* Main content responsive */
+  .content-container {
+    padding: 20px 10px;
+  }
+  
+  .intro-section {
+    flex-direction: column;
+    margin-left: 0;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .text-content {
+    max-width: 100%;
+  }
+  
+  .text-content h1 {
+    font-size: 2rem;
+  }
+  
+  .image-content img {
+    max-width: 80%;
+  }
+  
+  /* Benefits section responsive */
+  .benefits-section {
+    padding: 40px 15px;
+  }
+  
+  .design-image-top-right {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .design-image-bottom-left {
+    width: 80px;
+  }
+  
+  .benefits-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .benefits-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .benefit-card img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Footer responsive */
+  .footer-horizontal {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 15px;
+    text-align: center;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Logos section responsive */
+  .logos {
+    gap: 20px;
+  }
+  
+  .logos img {
+    height: 30px;
+  }
+}
+
+/* Small Devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+  /* Header adjustments */
+  .header {
+    padding: 15px;
+  }
+  
+  .navbar ul li {
+    margin-left: 15px;
+  }
+  
+  .navbar ul li a {
+    font-size: 14px;
+  }
+  
+  /* Main content adjustments */
+  .intro-section {
+    flex-direction: column;
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .text-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  /* Benefits section adjustments */
+  .benefits-section {
+    padding: 60px 20px;
+  }
+  
+  .design-image-top-right {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .benefits-header h2 {
+    font-size: 2rem;
+  }
+  
+  .benefits-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Practice SQL section adjustments */
+  .practice-sql-header h2 {
+    white-space: normal;
+  }
+  
+  .practice-sql-button-container {
+    margin-top: 100px;
+  }
+  
+  /* About section responsive */
+  .about-main-title {
+    font-size: 40px;
+  }
+  
+  .about-welcome-title {
+    font-size: 24px;
+  }
+  
+  /* Story section responsive */
+  .our-story-content {
+    padding-left: 0;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .story-design-top-right,
+  .story-design-bottom-left {
+    width: 150px;
+    height: 150px;
+  }
+  
+  /* Mission section responsive */
+  .mission-left-design,
+  .mission-right-design {
+    width: 100px;
+  }
+  
+  /* Vision section responsive */
+  .vision-title {
+    font-size: 36px;
+  }
+  
+  /* Pricing responsive */
+  .pricing-wrapper {
+    padding: 0 20px;
+  }
+  
+  .pricing-main {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .pricing-card {
+    max-width: 100%;
+  }
+  
+  .plan-title {
+    font-size: 1.5rem;
+  }
+  
+  .price {
+    font-size: 3rem;
+  }
+}
+
+/* Medium Devices (small laptops, 1024px and down) */
+@media (max-width: 1024px) {
+  /* Header adjustments */
+  .navbar ul li {
+    margin-left: 20px;
+  }
+  
+  /* Main content adjustments */
+  .intro-section {
+    margin-left: 100px;
+  }
+  
+  .text-content h1 {
+    font-size: 2.8rem;
+  }
+  
+  /* Benefits section adjustments */
+  .benefits-section {
+    padding: 70px 30px;
+  }
+  
+  .design-image-top-right {
+    width: 200px;
+    height: 200px;
+  }
+  
+  /* Community section adjustments */
+  .community-arrow img,
+  .partnership-handshake img {
+    max-width: 350px;
+  }
+  
+  /* Story section adjustments */
+  .our-story-content {
+    padding-left: 50px;
+  }
+  
+  /* Mission section adjustments */
+  .mission-left-design,
+  .mission-right-design {
+    width: 150px;
+  }
+  
+  /* Pricing adjustments */
+  .pricing-wrapper {
+    padding: 0 30px;
+  }
+}
+
+/* Large Devices (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1400px;
+  }
+  
+  .intro-section {
+    margin-left: 200px;
+  }
+  
+  .text-content h1 {
+    font-size: 3.5rem;
+  }
+  
+  .benefits-header h2 {
+    font-size: 3rem;
+  }
+  
+  .community-arrow img,
+  .partnership-handshake img {
+    max-width: 450px;
+  }
+}
+
+/* ========================================
+   SERVE SECTION RESPONSIVE DESIGN
+======================================== */
+
+/* Serve section base styles */
+.serve-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.serve-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.serve-header-container {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+  width: 90%;
+}
+
+.serve-main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.serve-highlight {
+  color: #00bcd4;
+}
+
+.serve-main-container {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  gap: 20px;
+  z-index: 2;
+}
+
+.serve-sub-div {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.serve-div-image {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px auto;
+  object-fit: contain;
+}
+
+.serve-sub-div p {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Serve section responsive design */
+@media (max-width: 480px) {
+  .serve-main-title {
+    font-size: 1.8rem;
+  }
+  
+  .serve-main-container {
+    flex-direction: column;
+    bottom: 10%;
+    gap: 15px;
+    width: 95%;
+  }
+  
+  .serve-sub-div {
+    padding: 15px;
+  }
+  
+  .serve-div-image {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .serve-sub-div p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .serve-main-title {
+    font-size: 2.2rem;
+  }
+  
+  .serve-main-container {
+    flex-direction: column;
+    bottom: 12%;
+    gap: 15px;
+  }
+  
+  .serve-sub-div {
+    padding: 18px;
+  }
+  
+  .serve-div-image {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .serve-sub-div p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .serve-main-title {
+    font-size: 2.5rem;
+  }
+  
+  .serve-main-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .serve-sub-div {
+    flex: 0 1 45%;
+    margin-bottom: 15px;
+  }
+}
+
+/* ========================================
+   ADDITIONAL RESPONSIVE UTILITIES
+======================================== */
+
+/* Responsive text utilities */
+.text-responsive-sm {
+  font-size: 0.875rem;
+}
+
+.text-responsive-md {
+  font-size: 1rem;
+}
+
+.text-responsive-lg {
+  font-size: 1.125rem;
+}
+
+/* Responsive spacing utilities */
+.spacing-responsive-sm {
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.spacing-responsive-md {
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.spacing-responsive-lg {
+  padding: 40px;
+  margin: 40px 0;
+}
+
+/* Responsive flex utilities */
+.flex-responsive-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .flex-responsive-column {
+    flex-direction: row;
+  }
+}
+
+/* Hide elements on specific screen sizes */
+.hide-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: block;
+  }
+}
+
+.hide-desktop {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* Responsive button adjustments */
+button, .button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  button, .button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive form elements */
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  input, textarea, select {
+    padding: 10px;
+    font-size: 0.9rem;
   }
 }

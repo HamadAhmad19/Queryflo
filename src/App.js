@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomeCompCall from './components/homepage/homeCompCall';
+import Pricing from './components/Pricing/pricing';
+import AboutCompCall from './components/about-section/aboutCompCall';
+import PartnerMain from './components/Partnership-Section/PartnerMain';
+import ComprehensivePage from './components/comprehensive-section/ComprehensivePage';
+import './App.css';  // Global CSS file for styles
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomeCompCall />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/about" element={<AboutCompCall />} />
+          <Route path="/partnership" element={<PartnerMain />} />
+          <Route path="/comprehensive" element={<ComprehensivePage />} />
+        </Routes>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
