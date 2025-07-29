@@ -24,6 +24,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+}
+
+.header-logo {
+  flex-shrink: 0;
+  margin-left: 150px;
 }
 
 .header-logo img {
@@ -31,7 +37,28 @@ body {
   filter: brightness(0) invert(1);
 }
 
-.navbar ul {
+/* Hamburger Menu Button */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.hamburger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Desktop Navigation */
+.desktop-nav ul {
   list-style: none;
   display: flex;
   margin: 0;
@@ -39,16 +66,153 @@ body {
   align-items: center;
 }
 
-.navbar ul li {
+.desktop-nav ul li {
   margin-left: 30px;
 }
 
+/* Mobile Navigation */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background-color: #111;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding-top: 80px;
+}
+
+.mobile-nav.active {
+  right: 0;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+.mobile-nav ul li {
+  margin: 15px 0;
+  width: 100%;
+}
+
+.mobile-nav ul li a {
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+  width: 100%;
+}
+
+.mobile-nav ul li button {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* Style for links */
 .navbar ul li a {
   text-decoration: none;
   color: white;
   font-weight: bold;
   font-size: 16px;
+  padding-bottom: 5px; /* Add space below for the underline */
+  transition: all 0.3s ease; /* Smooth transition */
 }
+
+/* Neon underline for active page */
+.navbar ul li a.active {
+  position: relative;
+  color: white; /* Text color */
+}
+
+.navbar ul li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; /* Thickness of the neon line */
+  background: #00bcd4; /* Neon line color */
+  box-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4, 0 0 30px #00bcd4; /* Neon glow effect */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Style for buttons */
+.navbar ul li button {
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 150px;
+  text-align: center;
+  display: inline-block;
+  font-weight: bold;
+  white-space: nowrap;
+  width: auto;
+}
+
+/* Create Account Button */
+.navbar ul li .btn-create-account {
+  background-color: #111;
+  color: white;
+}
+
+.navbar ul li .btn-create-account:hover {
+  background-color: #444;
+}
+
+/* Login Button */
+.navbar ul li .btn-login {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.navbar ul li .btn-login:hover {
+  background-color: #f1f1f1;
+}
+
+/* Ensuring the links inside the buttons are styled correctly */
+.navbar ul li button a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Responsive Design for Header */
+@media (max-width: 1150px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+}
+
+/* Overlay for mobile menu */
+.mobile-nav.active::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* /////////////////////////// */
 
 /* Main Content Section */
 .content-container {
@@ -87,14 +251,22 @@ body {
 
 .cta-button {
   padding: 10px 20px;
-  background-color: #00bcd4;
-  color: white;
-  border: none;
+  background-color: white;
+  color: black;
+  border-radius: 25px;
+  padding: 10px 10px;
+  font-size: 14px;
   cursor: pointer;
+  width: 150px;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;
+  width: auto;
 }
 
 .image-content img {
-  max-width: 40%;
+  margin-left: 45px;
+  max-width: 65%;
   height: auto;
 }
 
@@ -114,20 +286,25 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 .logos img {
-  height: 40px;
+  height: 60px;
   width: auto;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
+  opacity: 4.8;
+  border-radius: 50%; 
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .logos img:hover {
-  opacity: 1;
+  opacity: 1; /* Make the logo fully visible on hover */
+  transform: scale(1.1); /* Slightly increase the size of the logo */
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.7); /* Add a glowing effect */
 }
+
+/* /////////////////////////// */
 
 /* Benefits Section */
 .benefits-section {
@@ -146,7 +323,7 @@ body {
   width: 180px;
   height: 200px;
   z-index: 1;
-  opacity: 0.3;
+  opacity: 5.3;
 }
 
 .design-image-bottom-left {
@@ -156,10 +333,8 @@ body {
   width: 120px;
   height: auto;
   z-index: 1;
-  opacity: 0.3;
+  opacity: 5.3;
 }
-
-
 
 .benefits-content {
   display: flex;
@@ -170,38 +345,30 @@ body {
 }
 
 .benefits-header {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin-top: -40px;
 }
 
 .benefits-header h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
+  font-size: 1rem;
+  margin-bottom: 10px;
   color: white;
   font-weight: 600;
+  margin-left: 130px;
 }
 
 .benefits-header p {
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 50px;
   color: #00bcd4;
+  text-align: left;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
 }
 
-.design-images {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.design-images img {
-  width: 120px;
-  height: auto;
-}
 
 .design-image-center {
   position: absolute;
@@ -233,6 +400,8 @@ body {
   width: 60px;
   height: 60px;
   margin-bottom: 15px;
+  border-radius: 50%; 
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .benefit-card h3 {
@@ -248,12 +417,35 @@ body {
   margin: 0;
 }
 
+/* Hover effect on icons */
+.benefit-card img:hover {
+  transform: scale(1.2); 
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.7); 
+}
+
+.benefit-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: white;
+  
+}
+
+.benefit-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ccc;
+  margin: 0;
+  
+}
+
+/* ////////////////////////////////////////// */
+
 /* Responsive Design for Benefits Section */
 @media (max-width: 1024px) {
   .benefits-section .design-image-top-right {
     width: 140px;
     height: 160px;
-    opacity: 0.2;
+    opacity: 5.2;
   }
 
   .benefits-section .design-image-center img {
@@ -285,16 +477,16 @@ body {
   .benefits-section .design-image-top-right {
     width: 100px;
     height: 110px;
-    opacity: 0.15;
+    opacity: 5.15;
   }
 
   .benefits-section .design-image-center img {
     width: 80px;
-    opacity: 0.5;
+    opacity: 5.5;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 840px) {
 
   .benefits-section .design-image-top-right,
   .benefits-section .design-image-center {
@@ -319,6 +511,31 @@ body {
   justify-content: space-between;
   align-items: center;
   border-top: 2px solid #00bcd4;
+}
+
+/* Responsive Footer */
+@media (max-width: 1000px) {
+  .footer-horizontal {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+  
+  .footer-logo {
+    order: 1;
+  }
+  
+  .footer-links {
+    order: 2;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .footer-social {
+    order: 3;
+    justify-content: center;
+  }
 }
 
 .footer-logo img {
@@ -369,6 +586,8 @@ body {
   width: 20px;
   height: 20px;
 }
+
+/* /////////////////////////////////// */
 
 /* Help Section */
 .help-section {
@@ -478,37 +697,20 @@ body {
 .help-image-content {
   width: 100%;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  margin-left: -10px;
 }
 
 .help-image-content img {
-  max-width: 280px;
+  max-width: 100%; /* Allow image to scale */
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  max-height: 400px; /* Increase the size of the image */
+  object-fit: cover; /* Ensure the image fits without distortion */
 }
 
-.help-divider {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, transparent 10%, #00bcd4 50%, transparent 90%);
-  transform: translateX(-50%);
-}
 
-.help-divider::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
-  background-color: #00bcd4;
-  border-radius: 50%;
-}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -558,14 +760,7 @@ body {
   z-index: 1;
 }
 
-.feature-right-image {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  max-width: 200px;
-  height: auto;
-  z-index: 1;
-}
+
 
 .feature-header {
   margin-bottom: 60px;
@@ -633,9 +828,7 @@ body {
     max-width: 150px;
   }
 
-  .feature-right-image {
-    max-width: 150px;
-  }
+
 }
 
 @media (max-width: 768px) {
@@ -659,17 +852,11 @@ body {
     max-width: 100px;
     opacity: 0.5;
   }
-
-  .feature-right-image {
-    max-width: 100px;
-    opacity: 0.5;
-  }
 }
 
 @media (max-width: 480px) {
 
-  .feature-left-image,
-  .feature-right-image {
+  .feature-left-image {
     display: none;
   }
 }
@@ -720,8 +907,8 @@ body {
   font-size: 1rem;
   color: #ccc;
   line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 800px;
+  margin-top: -22px;
 }
 
 .practice-sql-button-container {
@@ -773,6 +960,8 @@ body {
     display: none;
   }
 }
+
+/* ///////////////////////////// */
 
 /* Community Section */
 .community-section {
@@ -888,6 +1077,7 @@ body {
   max-width: 200px;
   height: auto;
   cursor: pointer;
+  margin-left: -40px;
   transition: transform 0.3s ease;
 }
 
@@ -3314,8 +3504,7 @@ amic SQL Command Table Styles */
   }
 }
 
-/* Serve 
-Div Images */
+/* Serve Div Images */
 .serve-div-image {
   width: 60px;
   height: 60px;
@@ -3440,122 +3629,9 @@ Div Images */
   }
 }
 
-/* Mobile Styles */
-@media screen and (max-width: 480px) {
 
-  /* Header Adjustments */
-  .header {
-    padding: 10px;
-  }
 
-  /* Typography */
-  h1 {
-    font-size: 2rem;
-  }
 
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 0.9rem;
-  }
-
-  /* Image Containers */
-  .image-container {
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  /* Button Adjustments */
-  .button {
-    width: 100%;
-    max-width: none;
-    margin: 10px 0;
-  }
-}
-
-/* Picture Element Responsive Support */
-picture {
-  display: block;
-  width: 100%;
-}
-
-picture img {
-  width: 100%;
-  height: auto;
-}
-
-/* Responsive Grid Systems */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-/* Responsive Background Images */
-.bg-image {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Flexible Video Embeds */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  /* 16:9 Aspect Ratio */
-  height: 0;
-  overflow: hidden;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* High-DPI Screen Support */
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {
-  .high-res-img {
-    display: block;
-  }
-
-  .low-res-img {
-    display: none;
-  }
-}
-
-/* Print Media Query */
-@media print {
-  img {
-    max-width: 100% !important;
-    page-break-inside: avoid;
-  }
-}
-
-/* ========================================
-   COMPREHENSIVE RESPONSIVE DESIGN
-======================================== */
-
-/* Global Image Responsiveness */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Container Responsiveness */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 
 /* ========================================
    MOBILE FIRST RESPONSIVE BREAKPOINTS
@@ -3986,112 +4062,5 @@ img {
   .serve-sub-div {
     flex: 0 1 45%;
     margin-bottom: 15px;
-  }
-}
-
-/* ========================================
-   ADDITIONAL RESPONSIVE UTILITIES
-======================================== */
-
-/* Responsive text utilities */
-.text-responsive-sm {
-  font-size: 0.875rem;
-}
-
-.text-responsive-md {
-  font-size: 1rem;
-}
-
-.text-responsive-lg {
-  font-size: 1.125rem;
-}
-
-/* Responsive spacing utilities */
-.spacing-responsive-sm {
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.spacing-responsive-md {
-  padding: 20px;
-  margin: 20px 0;
-}
-
-.spacing-responsive-lg {
-  padding: 40px;
-  margin: 40px 0;
-}
-
-/* Responsive flex utilities */
-.flex-responsive-column {
-  display: flex;
-  flex-direction: column;
-}
-
-@media (min-width: 768px) {
-  .flex-responsive-column {
-    flex-direction: row;
-  }
-}
-
-/* Hide elements on specific screen sizes */
-.hide-mobile {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .hide-mobile {
-    display: block;
-  }
-}
-
-.hide-desktop {
-  display: block;
-}
-
-@media (min-width: 768px) {
-  .hide-desktop {
-    display: none;
-  }
-}
-
-/* Responsive button adjustments */
-button,
-.button {
-  padding: 12px 24px;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-@media (max-width: 480px) {
-
-  button,
-  .button {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-}
-
-/* Responsive form elements */
-input,
-textarea,
-select {
-  width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-@media (max-width: 480px) {
-
-  input,
-  textarea,
-  select {
-    padding: 10px;
-    font-size: 0.9rem;
   }
 }

@@ -4,6 +4,7 @@ import queryLogo from '../assests/Querylogo.png';
 import fbIcon from '../assests/fb.png';
 import instaIcon from '../assests/insta.png';
 import twitterIcon from '../assests/twitter.png';
+import discordIcon from '../assests/discord.png';
 
 const Footer = () => {
     return (
@@ -25,7 +26,7 @@ const Footer = () => {
             {/* Social Icons Section */}
             <div className="footer-social">
                 <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
-                    <img src={instaIcon} alt="Discord" />
+                    <img src={discordIcon} alt="Discord" />
                 </a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
                     <img src={instaIcon} alt="Instagram" />
