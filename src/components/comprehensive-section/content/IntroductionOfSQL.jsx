@@ -22,6 +22,24 @@ const IntroductionOfSQL = ({ currentSection, onNavigate, sidebarItems }) => {
         <div className="content-page">
             <h1 className="content-title">Introduction of SQL</h1>
             
+            {/* Top Navigation */}
+            <div className="content-navigation">
+                <button 
+                    className={`nav-button prev-button ${!previousSection ? 'disabled' : ''}`}
+                    onClick={handlePrevious}
+                    disabled={!previousSection}
+                >
+                    &lt; Previous
+                </button>
+                <button 
+                    className={`nav-button next-button ${!nextSection ? 'disabled' : ''}`}
+                    onClick={handleNext}
+                    disabled={!nextSection}
+                >
+                    Next &gt;
+                </button>
+            </div>
+            
             <div className="content-text">
                 <p>
                     Structured Query Language (SQL) serves as a foundational tool for interacting with relational databases, 
@@ -75,24 +93,6 @@ const IntroductionOfSQL = ({ currentSection, onNavigate, sidebarItems }) => {
                     reporting, data mining, and other analytical purposes. Data warehouses are typically optimized for read-
                     heavy workloads and may use specialized indexing and partitioning techniques to improve performance.
                 </p>
-            </div>
-            
-            {/* Bottom Navigation */}
-            <div className="content-navigation">
-                <button 
-                    className={`nav-button prev-button ${!previousSection ? 'disabled' : ''}`}
-                    onClick={handlePrevious}
-                    disabled={!previousSection}
-                >
-                    Previous
-                </button>
-                <button 
-                    className={`nav-button next-button ${!nextSection ? 'disabled' : ''}`}
-                    onClick={handleNext}
-                    disabled={!nextSection}
-                >
-                    Next
-                </button>
             </div>
         </div>
     );

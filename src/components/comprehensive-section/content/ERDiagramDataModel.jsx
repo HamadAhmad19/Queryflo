@@ -23,6 +23,24 @@ const ERDiagramDataModel = ({ currentSection, onNavigate, sidebarItems }) => {
         <div className="content-page">
             <h1 className="content-title">ER Diagram & Data Model</h1>
             
+            {/* Top Navigation */}
+            <div className="content-navigation">
+                <button 
+                    className={`nav-button prev-button ${!previousSection ? 'disabled' : ''}`}
+                    onClick={handlePrevious}
+                    disabled={!previousSection}
+                >
+                    &lt; Previous
+                </button>
+                <button 
+                    className={`nav-button next-button ${!nextSection ? 'disabled' : ''}`}
+                    onClick={handleNext}
+                    disabled={!nextSection}
+                >
+                    Next &gt;
+                </button>
+            </div>
+            
             <div className="content-text">
                 <p>
                     Data modeling is the process of creating a conceptual representation of data, called a data model, which 
@@ -115,14 +133,14 @@ const ERDiagramDataModel = ({ currentSection, onNavigate, sidebarItems }) => {
                     onClick={handlePrevious}
                     disabled={!previousSection}
                 >
-                    Previous
+                    &lt; Previous
                 </button>
                 <button 
                     className={`nav-button next-button ${!nextSection ? 'disabled' : ''}`}
                     onClick={handleNext}
                     disabled={!nextSection}
                 >
-                    Next
+                    Next &gt;
                 </button>
             </div>
         </div>

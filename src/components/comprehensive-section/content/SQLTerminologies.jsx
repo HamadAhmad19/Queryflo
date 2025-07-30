@@ -22,6 +22,24 @@ const SQLTerminologies = ({ currentSection, onNavigate, sidebarItems }) => {
         <div className="content-page">
             <h1 className="content-title">SQL Terminologies</h1>
             
+            {/* Top Navigation */}
+            <div className="content-navigation">
+                <button 
+                    className={`nav-button prev-button ${!previousSection ? 'disabled' : ''}`}
+                    onClick={handlePrevious}
+                    disabled={!previousSection}
+                >
+                    &lt; Previous
+                </button>
+                <button 
+                    className={`nav-button next-button ${!nextSection ? 'disabled' : ''}`}
+                    onClick={handleNext}
+                    disabled={!nextSection}
+                >
+                    Next &gt;
+                </button>
+            </div>
+            
             <div className="content-text">
                 <h3>SQL</h3>
                 <ol>
@@ -113,14 +131,14 @@ const SQLTerminologies = ({ currentSection, onNavigate, sidebarItems }) => {
                     onClick={handlePrevious}
                     disabled={!previousSection}
                 >
-                    Previous
+                    &lt; Previous
                 </button>
                 <button 
                     className={`nav-button next-button ${!nextSection ? 'disabled' : ''}`}
                     onClick={handleNext}
                     disabled={!nextSection}
                 >
-                    Next
+                    Next &gt;
                 </button>
             </div>
         </div>

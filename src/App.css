@@ -120,14 +120,17 @@ body {
   color: white;
   font-weight: bold;
   font-size: 16px;
-  padding-bottom: 5px; /* Add space below for the underline */
-  transition: all 0.3s ease; /* Smooth transition */
+  padding-bottom: 5px;
+  /* Add space below for the underline */
+  transition: all 0.3s ease;
+  /* Smooth transition */
 }
 
 /* Neon underline for active page */
 .navbar ul li a.active {
   position: relative;
-  color: white; /* Text color */
+  color: white;
+  /* Text color */
 }
 
 .navbar ul li a.active::after {
@@ -136,10 +139,14 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 3px; /* Thickness of the neon line */
-  background: #00bcd4; /* Neon line color */
-  box-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4, 0 0 30px #00bcd4; /* Neon glow effect */
-  transition: all 0.3s ease; /* Smooth transition */
+  height: 3px;
+  /* Thickness of the neon line */
+  background: #ffffff;
+  /* Neon line color */
+  /* box-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4, 0 0 30px #00bcd4; */
+  /* Neon glow effect */
+  transition: all 0.3s ease;
+  /* Smooth transition */
 }
 
 /* Style for buttons */
@@ -279,7 +286,7 @@ body {
 .footer-section p {
   font-size: 1.1rem;
   margin-bottom: 30px;
-  color: #ccc;
+  color: #8FA9B1;
 }
 
 .logos {
@@ -293,15 +300,15 @@ body {
 .logos img {
   height: 60px;
   width: auto;
-  opacity: 4.8;
-  border-radius: 50%; 
+  opacity: 5.8;
+  border-radius: 50%;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .logos img:hover {
-  opacity: 1; /* Make the logo fully visible on hover */
-  transform: scale(1.1); /* Slightly increase the size of the logo */
-  box-shadow: 0 0 10px rgba(0, 188, 212, 0.7); /* Add a glowing effect */
+  opacity: 1;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.7);
 }
 
 /* /////////////////////////// */
@@ -369,7 +376,6 @@ body {
   margin-right: auto;
 }
 
-
 .design-image-center {
   position: absolute;
   bottom: 0;
@@ -400,7 +406,7 @@ body {
   width: 60px;
   height: 60px;
   margin-bottom: 15px;
-  border-radius: 50%; 
+  border-radius: 50%;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -419,15 +425,15 @@ body {
 
 /* Hover effect on icons */
 .benefit-card img:hover {
-  transform: scale(1.2); 
-  box-shadow: 0 0 15px rgba(0, 188, 212, 0.7); 
+  transform: scale(1.2);
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.7);
 }
 
 .benefit-card h3 {
   font-size: 1.3rem;
   margin-bottom: 10px;
   color: white;
-  
+
 }
 
 .benefit-card p {
@@ -435,7 +441,7 @@ body {
   line-height: 1.5;
   color: #ccc;
   margin: 0;
-  
+
 }
 
 /* ////////////////////////////////////////// */
@@ -453,13 +459,54 @@ body {
   }
 }
 
+@media (max-width: 930px) {
+  .benefits-section .design-image-top-right {
+    width: 120px;
+    /* Start decreasing from 140px */
+    height: 140px;
+    /* Start decreasing from 160px */
+    opacity: 5.1;
+  }
+}
+
+/* New responsive rule for description text starting at 1200px */
+@media (max-width: 1200px) {
+  .benefits-header h2 {
+    font-size: 2rem !important;
+    /* Force title to stay same size */
+  }
+
+  .benefits-header p {
+    font-size: 0.95rem;
+    /* Start reducing description text */
+  }
+}
+
+@media (max-width: 1000px) {
+  .benefits-header h2 {
+    font-size: 2rem !important;
+    /* Force title to stay same size */
+  }
+
+  .benefits-header p {
+    font-size: 0.9rem;
+    /* Continue reducing description text */
+  }
+}
+
 @media (max-width: 768px) {
   .benefits-section {
     padding: 60px 20px;
   }
 
   .benefits-header h2 {
-    font-size: 2rem;
+    font-size: 1.2rem;
+    /* Force title to stay same size */
+  }
+
+  .benefits-header p {
+    font-size: 0.85rem;
+    /* Further reduce description text */
   }
 
   .benefits-cards {
@@ -483,6 +530,18 @@ body {
   .benefits-section .design-image-center img {
     width: 80px;
     opacity: 5.5;
+  }
+}
+
+@media (max-width: 600px) {
+  .benefits-header h2 {
+    font-size: 1rem !important;
+    /* Force title to stay same size */
+  }
+
+  .benefits-header p {
+    font-size: 0.8rem;
+    /* Even smaller for very small screens */
   }
 }
 
@@ -520,18 +579,18 @@ body {
     gap: 30px;
     padding: 30px 20px;
   }
-  
+
   .footer-logo {
     order: 1;
   }
-  
+
   .footer-links {
     order: 2;
     flex-direction: column;
     gap: 15px;
     text-align: center;
   }
-  
+
   .footer-social {
     order: 3;
     justify-content: center;
@@ -697,20 +756,17 @@ body {
 .help-image-content {
   width: 100%;
   display: flex;
-  /* justify-content: center; */
   margin-left: -10px;
 }
 
 .help-image-content img {
-  max-width: 100%; /* Allow image to scale */
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  max-height: 400px; /* Increase the size of the image */
-  object-fit: cover; /* Ensure the image fits without distortion */
+  max-height: 400px;
+  object-fit: cover;
 }
-
-
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -760,8 +816,6 @@ body {
   z-index: 1;
 }
 
-
-
 .feature-header {
   margin-bottom: 60px;
 }
@@ -784,8 +838,8 @@ body {
 .feature-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 40px;
+  align-items: revert;
+  gap: 0px;
 }
 
 .feature-image-container {
@@ -827,8 +881,6 @@ body {
   .feature-left-image {
     max-width: 150px;
   }
-
-
 }
 
 @media (max-width: 768px) {
@@ -1270,6 +1322,8 @@ body {
   }
 }
 
+/* /////////////////////////// */
+
 /* Pricing Section */
 .pricing-main {
   padding: 0px;
@@ -1290,6 +1344,9 @@ body {
   border-radius: 8px;
   transition: transform 0.3s ease;
   max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  min-height: 600px; /* Ensure all cards are of equal height */
 }
 
 .pricing-card:hover {
@@ -1322,12 +1379,26 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 500px;
+  min-height: 600px;
 }
+
+/* Styling for the first div text */
+.free-plan .plan-access {
+  text-align: center;
+  margin-top: 19px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 
 .plan-header {
   text-align: center;
   margin-bottom: 10px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .plan-title {
@@ -1346,16 +1417,21 @@ body {
 .plan-price {
   text-align: center;
   margin: 20px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;  /* Align text side by side */
+  justify-content: center;
+  align-items: center;
 }
 
 .currency {
   font-size: 1.5rem;
   color: #00bcd4;
-  font-weight: 600;
 }
 
 .price {
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: #00bcd4;
   font-weight: 700;
   margin-left: 5px;
@@ -1364,6 +1440,11 @@ body {
 .plan-access {
   text-align: center;
   margin: 20px 0 2px 0;
+  min-height: 80px;
+  /* Fixed height for alignment */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .access-title {
@@ -1383,7 +1464,13 @@ body {
 .plan-divider {
   border: none;
   border-top: 1px solid #e0e0e0;
-  margin: 5px 0 45px 0;
+  margin: 10px 0; /* Uniform margin for all dividers */
+  width: 100%;
+  position: relative;
+}
+
+.free-plan .plan-divider {
+  margin-top: 15px; /* Adjust to align with the others */
 }
 
 .plan-features {
@@ -1482,10 +1569,12 @@ body {
 }
 
 .price-period {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   color: #00bcd4;
   font-weight: 400;
-  margin-left: 5px;
+  margin-left: -1px;
+  margin-top: 20px;
+  font-style: italic;  /* Optional for style */
 }
 
 .plan-extra {
@@ -1512,10 +1601,15 @@ body {
 
 .upgrade-button {
   width: 100%;
-  height: auto;
+  height: 45px;
   cursor: pointer;
   transition: transform 0.3s ease;
   border-radius: 25px;
+  font-size: 1rem; 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
 }
 
 .upgrade-button:hover {
@@ -1531,8 +1625,7 @@ body {
   font-style: italic;
 }
 
-/* Prici
-ng Header Section */
+/* Pricing Header Section */
 .pricing-header-section {
   background-color: #ffffff;
   padding: 60px 50px 40px 50px;
@@ -1592,17 +1685,19 @@ ng Header Section */
 }
 
 .pricing-left-image {
-  max-width: 10%;
-  opacity: 0.8;
+  max-width: 50%;
+  opacity: 5.8;
   flex-shrink: 0;
+  margin-left: -300px;
 }
 
 .pricing-right-image {
-  max-width: 100px;
+  max-width: 50%;
+  margin-top: -275px;
   height: auto;
-  opacity: 0.8;
+  opacity: 5.8;
   flex-shrink: 0;
-  position: right;
+  margin-right: -270px;
 
 }
 
@@ -1633,6 +1728,9 @@ ng Header Section */
   }
 }
 
+
+/* /////////////////////////////////// */
+
 /* About Section Styles */
 .about-section {
   position: relative;
@@ -1640,7 +1738,7 @@ ng Header Section */
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: -14px;
   background-color: #ffffff;
   min-height: 100vh;
 }
@@ -1648,12 +1746,13 @@ ng Header Section */
 .about-background-container {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 334px;
   width: 100%;
-  height: 70%;
+  height: 54%;
   display: flex;
   justify-content: center;
   z-index: 1;
+  opacity: 0.5;
 }
 
 .about-background-image {
@@ -1670,28 +1769,28 @@ ng Header Section */
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 65px 0px;
 }
 
 .about-main-title {
-  font-size: 64px;
+  font-size: 62px;
   font-weight: 700;
   color: #000000;
-  margin: 0 0 10px 0;
+  margin: 0 0 -5px 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   letter-spacing: -1px;
 }
 
 .about-welcome-title {
-  font-size: 36px;
+  font-size: 35px;
   font-weight: 400;
   color: #40E0D0;
-  margin: 0 0 30px 0;
+  margin: 0 0 15px 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .about-description {
-  font-size: 14px;
+  font-size: 11.3px;
   line-height: 1.5;
   color: #333333;
   margin: 0 0 40px 0;
@@ -1700,7 +1799,7 @@ ng Header Section */
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .about-button-container {
@@ -1744,8 +1843,9 @@ ng Header Section */
   }
 }
 
-/* 
-Our Story Section Styles */
+/* /////////////////////////////////////////// */
+
+/* Our Story Section Styles */
 .our-story-section {
   background-color: #1a1a1a;
   padding: 80px 50px;
@@ -1762,7 +1862,7 @@ Our Story Section Styles */
   width: 220px;
   height: 220px;
   z-index: 1;
-  opacity: 0.7;
+  opacity: 5.7;
 }
 
 .story-design-bottom-left {
@@ -1772,7 +1872,7 @@ Our Story Section Styles */
   width: 200px;
   height: 200px;
   z-index: 1;
-  opacity: 0.7;
+  opacity: 5.7;
 }
 
 .our-story-content {
@@ -1800,26 +1900,26 @@ Our Story Section Styles */
 }
 
 .our-story-description {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   color: #00bcd4;
-  margin: 0 0 25px 0;
+  margin: 0 0 20px 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .our-story-quote {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   color: #ffffff;
   margin: 0 0 25px 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   font-style: italic;
-  padding-left: 20px;
-  border-left: 3px solid #00bcd4;
+  padding-left: 0px;
+  /* border-left: 3px solid #00bcd4; */
 }
 
 .our-story-solution {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   color: #00bcd4;
   margin: 0;
@@ -1880,13 +1980,13 @@ Our Story Section Styles */
   .story-design-top-right {
     width: 100px;
     height: 100px;
-    opacity: 0.4;
+    opacity: 5.4;
   }
 
   .story-design-bottom-left {
     width: 80px;
     height: 80px;
-    opacity: 0.4;
+    opacity: 5.4;
   }
 }
 
@@ -1897,6 +1997,8 @@ Our Story Section Styles */
     display: none;
   }
 }
+
+/* ////////////////////////////////////// */
 
 /* Our Mission Section Styles */
 .our-mission-section {
@@ -1910,14 +2012,14 @@ Our Story Section Styles */
 /* Decorative side images - Full Page Coverage */
 .mission-left-design {
   position: absolute;
-  left: 0;
+  left: -200px;
   top: 0;
   bottom: 0;
-  width: 200px;
-  height: 100%;
+  width: 512.956px;
+  height: 1343.033px;
   object-fit: contain;
   z-index: 1;
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .mission-right-design {
@@ -1926,7 +2028,7 @@ Our Story Section Styles */
   top: 0;
   bottom: 0;
   width: 200px;
-  height: 100%;
+  height: 140%;
   object-fit: contain;
   z-index: 1;
   opacity: 1;
@@ -1935,23 +2037,29 @@ Our Story Section Styles */
 .our-mission-main {
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
-  gap: 40px;
+  gap: 0;
 }
 
 .our-mission-sub-div-1 {
   background-color: #ffffff;
-  padding: 40px;
-  border-radius: 8px;
-  min-height: 400px;
+  padding: 12px;
+  border-radius: 8px 8px 0 0;
+  min-height: 80px;
+  margin: 0;
+  margin-bottom: -55px;
 }
 
 .our-mission-sub-div-2 {
   background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  min-height: 200px;
+  padding: 8px;
+  /* Reduced from 12px */
+  border-radius: 0 0 8px 8px;
+  min-height: 40px;
+  /* Reduced from 80px */
+  margin: 0;
+  margin-top: -55px;
 }
 
 /* Responsive Design for Our Mission Section */
@@ -1970,13 +2078,13 @@ Our Story Section Styles */
   }
 
   .our-mission-main {
-    gap: 30px;
+    gap: 0;
   }
 
   .our-mission-sub-div-1,
   .our-mission-sub-div-2 {
-    padding: 30px;
-    min-height: 150px;
+    padding: 10px;
+    min-height: 60px;
   }
 
   .mission-left-design,
@@ -2000,6 +2108,7 @@ Our Story Section Styles */
   align-items: center;
   gap: 40px;
   width: 100%;
+  margin-left: 0px;
 }
 
 .mission-image-container {
@@ -2089,11 +2198,10 @@ Our Story Section Styles */
   }
 }
 
-/* D
-ifferent Content Styles */
+/* Different Content Styles */
 .different-content {
   width: 100%;
-  padding: 20px 0;
+  padding: 0;
 }
 
 .different-title {
@@ -2108,6 +2216,8 @@ ifferent Content Styles */
 .different-highlight {
   color: #40E0D0;
 }
+
+/* //////////////////////////////////// */
 
 .features-grid {
   display: grid;
@@ -2176,116 +2286,9 @@ ifferent Content Styles */
   }
 }
 
-/* Serve Section Styles */
-.serve-section {
-  background-color: #ffffff;
-  padding: 80px 50px;
-  color: #333;
-  text-align: center;
-}
+/* ////////////////////////////////// */
 
-.serve-header-container {
-  margin: 40px 0 60px 0;
-}
-
-.serve-main-title {
-  font-size: 48px;
-  font-weight: 700;
-  color: #333;
-  margin: 0 0 20px 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-}
-
-.serve-highlight {
-  color: #40E0D0;
-}
-
-.serve-subtitle {
-  font-size: 18px;
-  color: #666;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-}
-
-.serve-main-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-
-.serve-sub-div {
-  flex: 1;
-  min-width: 250px;
-  max-width: 280px;
-  padding: 30px 20px;
-  background-color: #f8f9fa;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.serve-sub-div:hover {
-  transform: translateY(-5px);
-}
-
-.serve-div-image {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 20px;
-  object-fit: contain;
-}
-
-.serve-sub-div p {
-  font-size: 16px;
-  color: #666;
-  line-height: 1.5;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-}
-
-/* Responsive Design for Serve Section */
-@media (max-width: 768px) {
-  .serve-section {
-    padding: 60px 20px;
-  }
-
-  .serve-main-title {
-    font-size: 36px;
-  }
-
-  .serve-subtitle {
-    font-size: 16px;
-  }
-
-  .serve-main-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .serve-sub-div {
-    min-width: auto;
-    max-width: 100%;
-    padding: 25px 15px;
-  }
-
-  .serve-div-image {
-    width: 60px;
-    height: 60px;
-  }
-
-  .serve-sub-div p {
-    font-size: 14px;
-  }
-}
-
-/* 
-Vision Section Styles */
+/* Vision Section Styles */
 .vision-section {
   background-color: #ffffff;
   padding: 80px 50px;
@@ -2324,7 +2327,7 @@ Vision Section Styles */
   font-size: 48px;
   font-weight: 700;
   color: #333;
-  margin: 0 0 30px 0;
+  margin: 0 0 30px 275px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
@@ -2345,6 +2348,7 @@ Vision Section Styles */
 .join-us-button {
   cursor: pointer;
   max-width: 150px;
+  margin: 0 0 30px 370px;
   height: auto;
   transition: transform 0.3s ease;
 }
@@ -2501,6 +2505,8 @@ Vision Section Styles */
     max-height: 300px;
   }
 }
+
+/* /////////////////////////////// */
 
 /* WhyUs Section Styles */
 .whyus-section {
@@ -2711,6 +2717,8 @@ Vision Section Styles */
   }
 }
 
+/* /////////////////////////// */
+
 /*Talk Section Styles */
 .talk-section {
   background-color: #ffffff;
@@ -2899,6 +2907,7 @@ Vision Section Styles */
   font-weight: 500;
   border-left: 3px solid #00bcd4;
 }
+
 
 /* Content Area Styles */
 .comprehensive-content {
@@ -3407,185 +3416,7 @@ amic SQL Command Table Styles */
   }
 }
 
-/* Serve Section Styles */
-.serve-section {
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #111;
-  position: relative;
-  overflow: hidden;
-}
 
-/* Responsive Design for Serve Section */
-@media (max-width: 768px) {
-  .serve-section {
-    height: 70vh;
-    min-height: 500px;
-  }
-}
-
-@media (max-width: 480px) {
-  .serve-section {
-    height: 60vh;
-    min-height: 400px;
-  }
-}
-
-/* Serve Main Container and Sub-divs */
-.serve-main-container {
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-  width: 70%;
-  max-width: 800px;
-  z-index: 2;
-}
-
-.serve-sub-div {
-  flex: 1;
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 15px;
-  border-radius: 6px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  max-width: 180px;
-}
-
-.serve-sub-div:hover {
-  transform: translateY(-5px);
-}
-
-.serve-sub-div h3 {
-  margin: 0 0 10px 0;
-  color: #333;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.serve-sub-div p {
-  margin: 0;
-  color: #666;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-/* Responsive Design for Serve Sub-divs */
-@media (max-width: 768px) {
-  .serve-main-container {
-    flex-direction: column;
-    width: 95%;
-    gap: 15px;
-  }
-
-  .serve-sub-div {
-    padding: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .serve-sub-div {
-    padding: 12px;
-  }
-
-  .serve-sub-div h3 {
-    font-size: 1rem;
-  }
-
-  .serve-sub-div p {
-    font-size: 0.8rem;
-  }
-}
-
-/* Serve Div Images */
-.serve-div-image {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  margin-bottom: 10px;
-  border-radius: 8px;
-}
-
-/* Responsive Design for Serve Images */
-@media (max-width: 768px) {
-  .serve-div-image {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .serve-div-image {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 6px;
-  }
-}
-
-/* Serve Header Styles */
-.serve-header-container {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 2;
-}
-
-.serve-main-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: white;
-  margin: 0 0 85px 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  letter-spacing: -1px;
-}
-
-.serve-highlight {
-  color: #40E0D0;
-}
-
-.serve-subtitle {
-  font-size: 1.1rem;
-  color: #ccc;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-}
-
-/* Responsive Design for Serve Header */
-@media (max-width: 768px) {
-  .serve-header-container {
-    top: 30%;
-  }
-
-  .serve-main-title {
-    font-size: 2rem;
-  }
-
-  .serve-subtitle {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .serve-main-title {
-    font-size: 1.5rem;
-  }
-
-  .serve-subtitle {
-    font-size: 0.9rem;
-  }
-}
 
 /* Add these responsive styles at the end of your existing CSS file */
 
@@ -3921,146 +3752,557 @@ amic SQL Command Table Styles */
   }
 }
 
-/* ========================================
-   SERVE SECTION RESPONSIVE DESIGN
-======================================== */
 
-/* Serve section base styles */
-.serve-section {
+
+/* Our Mission Section - Simple Layout */
+.our-mission-section {
   position: relative;
-  width: 100%;
+  background-color: #ffffff;
   min-height: 100vh;
-  overflow: hidden;
 }
 
-.serve-section img {
-  width: 100%;
+/* Left design image - stays in background */
+.mission-left-design {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
-  object-fit: cover;
+  width: auto;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+/* Right design image - stays in background */
+.mission-right-design {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+/* Main content - positioned on top of background images */
+.our-mission-main {
+  position: relative;
+  z-index: 2;
+  padding: 80px 50px;
+}
+
+
+/* ////////////////////////////////// */
+
+/* Serve Section Styles */
+.serve-section {
+  background-color: #111;
+  padding: 0;
+  position: relative;
+}
+
+.serve-background-container {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.serve-background-image {
+  width: 100%;
+  height: 50%;
+  object-fit: contain;
   object-position: center;
 }
 
-.serve-header-container {
+.serve-text-overlay {
   position: absolute;
-  top: 10%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   text-align: center;
   z-index: 2;
-  width: 90%;
+  color: white;
 }
 
 .serve-main-title {
-  font-size: 3rem;
+  font-size: 1rem;
   font-weight: 700;
-  color: #333;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  letter-spacing: 3px;
 }
 
 .serve-highlight {
   color: #00bcd4;
 }
 
-.serve-main-container {
-  position: absolute;
-  bottom: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  max-width: 1200px;
-  gap: 20px;
-  z-index: 2;
-}
-
-.serve-sub-div {
-  flex: 1;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.serve-div-image {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 15px auto;
-  object-fit: contain;
-}
-
-.serve-sub-div p {
-  font-size: 0.9rem;
-  color: #333;
+.serve-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #ccc;
   margin: 0;
-  line-height: 1.4;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
-/* Serve section responsive design */
-@media (max-width: 480px) {
-  .serve-main-title {
-    font-size: 1.8rem;
-  }
-
-  .serve-main-container {
-    flex-direction: column;
-    bottom: 10%;
-    gap: 15px;
-    width: 95%;
-  }
-
-  .serve-sub-div {
-    padding: 15px;
-  }
-
-  .serve-div-image {
-    width: 40px;
-    height: 40px;
-  }
-
-  .serve-sub-div p {
-    font-size: 0.8rem;
-  }
-}
-
+/* Responsive Design for Serve Section */
 @media (max-width: 768px) {
-  .serve-main-title {
-    font-size: 2.2rem;
+  .serve-background-container {
+    height: 40vh;
   }
 
-  .serve-main-container {
-    flex-direction: column;
-    bottom: 12%;
-    gap: 15px;
-  }
-
-  .serve-sub-div {
-    padding: 18px;
-  }
-
-  .serve-div-image {
-    width: 50px;
-    height: 50px;
-  }
-
-  .serve-sub-div p {
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 1024px) {
   .serve-main-title {
     font-size: 2.5rem;
   }
 
-  .serve-main-container {
-    flex-wrap: wrap;
-    justify-content: center;
+  .serve-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .serve-main-title {
+    font-size: 2rem;
   }
 
-  .serve-sub-div {
-    flex: 0 1 45%;
-    margin-bottom: 15px;
+  .serve-subtitle {
+    font-size: 1rem;
   }
+}
+
+/* Serve Section with Overlay Content */
+.serve-section {
+  background-color: #111;
+  padding: 0;
+  position: relative;
+}
+
+.serve-background-container {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.serve-background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.serve-text-overlay {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  color: white;
+}
+
+.serve-main-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  letter-spacing: -1px;
+}
+
+.serve-highlight {
+  color: #00bcd4;
+}
+
+.serve-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #ccc;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.serve-content-overlay {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 800px;
+  width: 80%;
+  z-index: 2;
+}
+
+.serve-item {
+  text-align: center;
+  color: white;
+}
+
+.serve-item-image {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  filter: brightness(0) saturate(100%) invert(78%) sepia(85%) saturate(1352%) hue-rotate(158deg) brightness(101%) contrast(101%);
+}
+
+.serve-item h3 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #ccc;
+  margin: 0;
+  line-height: 1.4;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Responsive Design for Serve Section */
+@media (max-width: 768px) {
+  .serve-background-container {
+    height: 80vh;
+  }
+
+  .serve-main-title {
+    font-size: 2.5rem;
+  }
+
+  .serve-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .serve-content-overlay {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    bottom: 15%;
+  }
+
+  .serve-item-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .serve-item h3 {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .serve-main-title {
+    font-size: 2rem;
+  }
+
+  .serve-subtitle {
+    font-size: 1rem;
+  }
+
+  .serve-content-overlay {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    bottom: 10%;
+  }
+
+  .serve-item-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .serve-item h3 {
+    font-size: 0.7rem;
+  }
+}
+
+/* //////////////////// */
+
+/* Our Mission Section Styles */
+.our-mission-section {
+  background-color: #f8f9fa;
+  padding: 80px 50px;
+  color: #333;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Background decorative images */
+.mission-left-design {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  opacity: 0.3;
+  z-index: 0.5;
+}
+
+.mission-right-design {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  opacity: 0.3;
+  z-index: 0.5;
+}
+
+.our-mission-main {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Mission Sub Div 1 - Positioned upward */
+.our-mission-sub-div-1 {
+  margin-top: -90px;
+  /* Move upward */
+  margin-bottom: 60px;
+  padding: 40px 0;
+}
+
+.mission-content-layout {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.mission-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.mission-people-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  border-radius: 10px;
+}
+
+.mission-text-container {
+  flex: 1;
+  text-align: left;
+}
+
+.mission-title {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.mission-highlight {
+  color: #00bcd4;
+}
+
+.mission-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.mission-button-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.get-started-button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.get-started-button:hover {
+  background-color: #00acc1;
+  transform: translateY(-2px);
+}
+
+/* Mission Sub Div 2 - What Makes Us Different */
+.our-mission-sub-div-2 {
+  padding: 60px 0;
+}
+
+.different-content {
+  text-align: center;
+}
+
+.different-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.different-highlight {
+  color: #00bcd4;
+}
+
+.features-grid {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.features-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  text-align: left;
+}
+
+.feature-icon {
+  color: #00bcd4;
+  font-size: 1.2rem;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-title {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.feature-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Responsive Design for Mission Section */
+@media (max-width: 1024px) {
+  .mission-content-layout {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .features-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .our-mission-sub-div-1 {
+    margin-top: -20px;
+    /* Less upward movement on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .our-mission-section {
+    padding: 60px 20px;
+  }
+
+  .mission-title {
+    font-size: 2.2rem;
+  }
+
+  .different-title {
+    font-size: 2rem;
+  }
+
+  .features-column {
+    gap: 25px;
+  }
+
+  .our-mission-sub-div-1 {
+    margin-top: -10px;
+    /* Minimal upward movement on mobile */
+  }
+
+  .mission-left-design,
+  .mission-right-design {
+    opacity: 0.2;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .mission-left-design,
+  .mission-right-design {
+    display: none;
+  }
+}
+
+/* Content Navigation Buttons */
+.content-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.nav-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.prev-button {
+  background-color: #40E0D0;
+  /* Cyan/turquoise color */
+  color: white;
+}
+
+.prev-button:hover {
+  background-color: #36C7B8;
+  transform: translateY(-1px);
+}
+
+.next-button {
+  background-color: #40E0D0;
+  /* Cyan/turquoise color */
+  color: white;
+  margin-left: auto;
+  /* Force to right side */
+}
+
+.next-button:hover {
+  background-color: #36C7B8;
+  transform: translateY(-1px);
+}
+
+.nav-button.disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.nav-button.disabled:hover {
+  transform: none;
+  background-color: #cccccc;
 }

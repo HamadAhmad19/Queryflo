@@ -189,7 +189,7 @@ const Pricing = () => {
                             </div>
 
                             <div className="plan-price">
-                                <p className="starting-from">Starting from</p>
+                                <p className="starting-from"></p>
                                 <span className="currency">$</span>
                                 <span className="price">499</span>
                                 <span className="price-period">/ semester</span>
