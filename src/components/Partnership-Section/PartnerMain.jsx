@@ -5,7 +5,7 @@ import Header from '../../ReuseableComponents/header';
 import Footer from '../../ReuseableComponents/footer';
 import LandingPage from './landingPage';
 import WhyUs from './whyus';
-import Feature from './features';
+// import Feature from './features';
 import Talk from './talk';
 
 
@@ -16,7 +16,7 @@ const PartnerMain = () => {
             <Header />
             <LandingPage />
             <WhyUs />
-            <Feature />
+            {/* <Feature /> */}
             <Talk />
             <Footer />
         </div>
