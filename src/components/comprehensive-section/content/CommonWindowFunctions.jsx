@@ -132,7 +132,7 @@ const CommonWindowFunctions = ({ currentSection, onNavigate, sidebarItems }) => 
                 </div>
 
                 <div className="note-section">
-                    <h4>Note:</h4>
+                    <h4>Conclusion: Mastering SQL for Technical Interviews</h4>
                     <p>
                         This lesson has provided a comprehensive overview of SQL commands, categorized into basic,
                         intermediate, and advanced levels. Understanding the commands within each category is essential for
