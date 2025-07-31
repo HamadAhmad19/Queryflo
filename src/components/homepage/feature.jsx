@@ -86,7 +86,7 @@ const Feature = () => {
                 {/* Second Sub-div */}
                 <div className="perfect-for-sub-div second-sub-div">
                     <div className="top-section">
-                        <div className="text-with-icon seconds-icons-text-div">
+                        <div className="text-with-icon seconds-icons-text-div university-text">
                             <img src={rightUpperIcon} alt="Data Science Icon" className="left-icon" />
                             <span className="top-text">University Data Science/<br />Analytics Programs</span>
 

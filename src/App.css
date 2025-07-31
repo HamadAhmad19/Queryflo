@@ -847,7 +847,7 @@ body {
   max-width: 1040px;
   margin: 0 auto 60px auto;
   padding: 0 20px;
-  background: radial-gradient(ellipse at center, #172a2c 0%, #0f1f21 40%, #000000 100%);
+  background: radial-gradient(ellipse at center, #172a2c 10%, #0f1f21 70%, #000000 100%);
   border-radius: 1px;
   padding: 0px 0px;
   box-shadow: 0 -30px 60px rgba(42, 123, 134, 0.15), 0 50px 80px rgba(0, 188, 212, 0.15);
@@ -957,6 +957,10 @@ body {
   position: relative;
   top: -10px;
   left: -46px;
+}
+.university-text {
+  position: relative;
+  top: -15px;
 }
 
 .text-with-icon {
